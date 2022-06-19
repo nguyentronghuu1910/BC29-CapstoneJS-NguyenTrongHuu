@@ -1,0 +1,85 @@
+.btn-card-detail {
+    @include styleText($fs-3, $fw-2, $clr-white-1);
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    background-color: $clr-pink-1;
+    border: none;
+    padding: $fs-2 0;
+
+
+    &:hover {
+        color: $clr-black-1;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.btn-card-cart {
+    @extend .btn-card-detail;
+    border-right: solid 1px $clr-white-1;
+
+    &:active {
+        animation: gradient 100ms;
+        background: #f88;
+        color: #fff;
+        box-shadow: none;
+    }
+}
+
+.qty_content {
+    @include styleText($fs-5, $fw-2, $clr-black-1);
+    flex: 50%;
+    line-height: 2.0;
+}
+
+.qty_plus {
+    float: right;
+}
+
+.qty_minus {
+    float: left;
+}
+
+.qty_minus,
+.qty_plus {
+    text-align: center;
+    width: 35px;
+    height: 100%;
+    line-height: 2.0;
+
+    &:hover {
+        cursor: pointer;
+        background-color: $clr-pink-1;
+        color: $clr-white-1;
+    }
+}
+
+.inactive {
+    display: none;
+}
+
+@keyframes gradient {
+    0% {
+        background: radial-gradient(circle at center, rgba(255, 125, 125, 0) 0%, #fff 0%, #fff 100%);
+    }
+
+    25% {
+        background: radial-gradient(circle at center, rgba(255, 125, 125, 0.3) 24%, #fff 25%, #fff 100%);
+    }
+
+    50% {
+        background: radial-gradient(circle at center, rgba(255, 125, 125, 0.5) 49%, #fff 50%, #fff 100%);
+    }
+
+    75% {
+        background: radial-gradient(circle at center, rgba(255, 125, 125, 0.8) 74%, #fff 75%, #fff 100%);
+    }
+
+    100% {
+        color: #fff;
+        background: radial-gradient(circle at center, #f88 99%, #fff 100%, #fff 100%);
+    }
+}
